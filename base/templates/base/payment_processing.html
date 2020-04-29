@@ -1,0 +1,32 @@
+{% extends 'base/template.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="d-md-flex justify-content-md-center align-items-md-center"
+         style="height: 100%; width: 100%; position:fixed; left: 300px">
+        <div class="container">
+            <div class="row">
+                <div class="col" style="max-width: 5%">
+                    <div class="spinner-grow" role="status" style="position: relative; top: 20px">
+                    </div>
+                </div>
+                <div class="col">
+                    <h1>Processing ...</h1>
+                    <p>Your (fake) payment is currently processed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{ ady_details|json_script:"ady_details" }}
+    {% csrf_token %}
+
+    <script type="text/javascript">
+        {% include "base/getCookie.js" %}           // To grab the CSRF cookie
+        {% include "base/drop-in_actionState.js" %}         // To handle different state.action
+        {% include "base/drop-in_processing.js" %}  // Adyen Drop-in post-redirect handle
+    </script>
+
+{% endblock content %}
