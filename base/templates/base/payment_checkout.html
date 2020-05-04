@@ -44,10 +44,8 @@
     {{ originKey|json_script:"originKey" }}
     {% csrf_token %}
 
-    <script type="text/javascript">
-        {% include "base/getCookie.js" %}           // To grab the CSRF cookie
-        {% include "base/drop-in_actionState.js" %}         // To handle different state.action
-        {% include "base/drop-in_checkout.js" %}    // Handle Adyen Drop-in component
-    </script>
+	<script type="text/javascript" src="{% static "js/getCookie.js" %}"></script>				<!-- To grab the CSRF cookie -->
+	<script type="text/javascript" src="{% static "js/drop-in_actionState.js" %}"></script>		<!-- To handle different state.action -->
+	<script type="text/javascript" src="{% static "js/drop-in_checkout.js" %}"></script>		<!-- Handle Adyen Drop-in component -->
 
 {% endblock content %}
