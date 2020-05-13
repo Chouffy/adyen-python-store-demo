@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound, JsonResponse
 from django.shortcuts import render
 from .ady_API import *
 from .secrets import secrets
@@ -10,7 +10,7 @@ currency = "EUR"
 
 # Default views - Redirect to the next page
 def index(request):
-    return HttpResponse('<script type="text/javascript">window.location.href = "/country/"</script>')
+    return HttpResponseRedirect("/country/")
 
 
 # Simple pre-checkout pages
