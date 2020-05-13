@@ -31,7 +31,7 @@ const configuration = {
     },
 
     onAdditionalDetails: (state, dropin) => {
-        console.log("onAdditionalDetails called")
+        alert("onAdditionalDetails called")
 
         /* not implemented
 
