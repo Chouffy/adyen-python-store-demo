@@ -33,4 +33,5 @@ Most merchant-specific info are needs to be registered in `base/secrets.py`. A t
 * [Pixabay - Leovinus icons](https://pixabay.com/users/leovinus-615857/)
 
 ## License
-The Unlicense - see LICENSE
+The Unlicense - see LICENSE.
+Some code extract are coming from [Adyen documentation](https://docs.adyen.com/checkout/drop-in-web).
